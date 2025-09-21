@@ -9,11 +9,11 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 #Load model and scaler
-NGBoost_LSC=joblib.load('Studs_Deck_LSC_NGBoost.joblib')
-NGBoost_LSC_scaler=pickle.load(open('Studs_Deck_LSC_NGBoost.pkl','rb'))
+NGBoost_LSC=joblib.load(os.path.join(ROOT_DIR,'Studs_Deck_LSC_NGBoost.joblib'))
+NGBoost_LSC_scaler=pickle.load(open(os.path.join(ROOT_DIR,'Studs_Deck_LSC_NGBoost.pkl'),'rb'))
 
-CatBoost_LSC=joblib.load('Studs_Deck_LSC_CatBoost.joblib')
-CatBoost_LSC_scaler=pickle.load(open('Studs_Deck_LSC_CatBoost.pkl','rb'))
+CatBoost_LSC=joblib.load(os.path.join(ROOT_DIR,'Studs_Deck_LSC_CatBoost.joblib'))
+CatBoost_LSC_scaler=pickle.load(open(os.path.join(ROOT_DIR,'Studs_Deck_LSC_CatBoost.pkl'),'rb'))
 
 st.write('### Load-Slip Curves for Headed Shear Studs in Deck Slab Ribs Perpendicular to Supports Predicted by ML Models')
 
@@ -145,11 +145,11 @@ else: EC4_AL='No'
 
 
 st.write('##### Geometric parameters of welded stud connections')
-image1 = Image.open('Geom_R1.png')
-st.image(image1,width=400) 
+image1 = Image.open(os.path.join(ROOT_DIR,'Geom_R1.png'))
+st.image(image1,width=400)
 
 st.write('##### Positions of two studs in concrete ribs')
-image2 = Image.open('Two_stud_positions.png')
+image2 = Image.open(os.path.join(ROOT_DIR,'Two_stud_positions.png'))
 st.image(image2)
 
     
@@ -681,4 +681,5 @@ else:
         st.write('Slip capacity (CatBoost), $\delta_\mathrm{u}$=', "{:.3f}".format(du_CatBoost/25.4),' in. at $P_\mathrm{Rk}$=',"{:.2f}".format(PRk/(4.4482216*1000)),' kips, with the assumed value of $P_\mathrm{u}$=',"{:.2f}".format(Pu/(4.4482216*1000)),' kips')            
         st.write('Slip capacity (NGBoost), $\delta_\mathrm{u}$=', "{:.3f}".format(du_NGBoost/25.4),' in. at $P_\mathrm{Rk}$=',"{:.2f}".format(PRk/(4.4482216*1000)),' kips, with the assumed value of $P_\mathrm{u}$=',"{:.2f}".format(Pu/(4.4482216*1000)),' kips')    
         st.write('Shear stiffness (CatBoost), $k_\mathrm{sc}$=', "{:.1f}".format(0.001*ksc_CatBoost*5.71),' kip/in. at ',"{:.2f}".format(PRk_ratio),'$P_\mathrm{Rk}$=',"{:.2f}".format(PRk_ratio*PRk/(4.4482216*1000)),' kips, with the assumed value of $P_\mathrm{u}$=',"{:.2f}".format(Pu/(4.4482216*1000)),' kips') 
+
         st.write('Shear stiffness (NGBoost), $k_\mathrm{sc}$=', "{:.1f}".format(0.001*ksc_NGBoost*5.71),' kip/in. at ',"{:.2f}".format(PRk_ratio),'$P_\mathrm{Rk}$=',"{:.2f}".format(PRk_ratio*PRk/(4.4482216*1000)),' kips, with the assumed value of $P_\mathrm{u}$=',"{:.2f}".format(Pu/(4.4482216*1000)),' kips')             
