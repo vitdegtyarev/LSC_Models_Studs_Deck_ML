@@ -5,6 +5,8 @@ import joblib
 import pickle
 import numpy as np
 import math
+import os
+from config.definitions import ROOT_DIR
 from PIL import Image
 import matplotlib.pyplot as plt
 
@@ -683,3 +685,4 @@ else:
         st.write('Shear stiffness (CatBoost), $k_\mathrm{sc}$=', "{:.1f}".format(0.001*ksc_CatBoost*5.71),' kip/in. at ',"{:.2f}".format(PRk_ratio),'$P_\mathrm{Rk}$=',"{:.2f}".format(PRk_ratio*PRk/(4.4482216*1000)),' kips, with the assumed value of $P_\mathrm{u}$=',"{:.2f}".format(Pu/(4.4482216*1000)),' kips') 
 
         st.write('Shear stiffness (NGBoost), $k_\mathrm{sc}$=', "{:.1f}".format(0.001*ksc_NGBoost*5.71),' kip/in. at ',"{:.2f}".format(PRk_ratio),'$P_\mathrm{Rk}$=',"{:.2f}".format(PRk_ratio*PRk/(4.4482216*1000)),' kips, with the assumed value of $P_\mathrm{u}$=',"{:.2f}".format(Pu/(4.4482216*1000)),' kips')             
+
