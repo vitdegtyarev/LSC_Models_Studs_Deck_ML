@@ -686,3 +686,8 @@ else:
 
         st.write('Shear stiffness (NGBoost), $k_\mathrm{sc}$=', "{:.1f}".format(0.001*ksc_NGBoost*5.71),' kip/in. at ',"{:.2f}".format(PRk_ratio),'$P_\mathrm{Rk}$=',"{:.2f}".format(PRk_ratio*PRk/(4.4482216*1000)),' kips, with the assumed value of $P_\mathrm{u}$=',"{:.2f}".format(Pu/(4.4482216*1000)),' kips')             
 
+st.write('')
+st.write('###### Reference')
+st.write('Degtyarev, V.V., Hicks, S.J., 2026, Machine learning models for predicting load-slip curves of shear studs welded in deck slab ribs transverse to beams. Structures, 89, 112137. https://doi.org/10.1016/j.istruc.2026.112137.')
+st.markdown('[Journal](https://www.sciencedirect.com/science/article/pii/S2352012426010866#ack0005)', unsafe_allow_html=True)
+st.markdown('[ResearchGate](https://www.researchgate.net/publication/405023243_Machine_learning_models_for_predicting_load-slip_curves_of_shear_studs_welded_in_deck_slab_ribs_transverse_to_beams)', unsafe_allow_html=True)
